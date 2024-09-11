@@ -1,0 +1,54 @@
+syntax = "proto3";
+
+option csharp_namespace = "FirstProjectGrpc.Protos";
+
+import "google/protobuf/timestamp.proto";
+
+
+message TrackingMassage {
+	int32 deviceId = 1;
+	int32 speed = 2;
+	Location location = 3;
+	google.protobuf.Timestamp stamp = 4;
+	repeated Sensor sensore = 5;
+}
+message Location {
+	double lat = 1;
+	double long = 2;
+}
+message TrackingResponse {
+	bool success = 1;
+}
+message AddProductDto{
+	int32 Price = 1;
+	string Name = 2;
+}
+message GetProductDto{
+	int32 Id = 1;
+	int32 Price = 2;
+	string Name = 3;
+}
+message Sensor{
+	string key = 1;
+	int32 value = 2;
+}
+message PulseMessage{
+
+	ClientStatus status = 1;
+	string details = 2;
+	google.protobuf.Timestamp stamp = 3;
+}
+
+enum ClientStatus {
+	INVALID = 0;
+	WORKING = 1;
+	FAIL = 2;
+}
+
+message SubscribeRequest {
+	int32 deviceId = 1;
+}
+message Notification { 
+	string Text = 1;
+    google.protobuf.Timestamp stamp = 2;
+}

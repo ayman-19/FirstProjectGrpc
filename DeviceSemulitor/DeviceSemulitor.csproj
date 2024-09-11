@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk.Worker">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>dotnet-DeviceSemulitor-6a2a3e52-8912-4916-bb87-b146a173d31a</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Google.Protobuf" Version="3.21.5" />
+    <PackageReference Include="Microsoft.Extensions.Hosting" Version="8.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\FirstProjectGrpc\FirstProjectGrpc.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Protobuf Include="..\FirstProjectGrpc\Protos\models.proto" GrpcServices="Client">
+      <Link>Protos\models.proto</Link>
+    </Protobuf>
+    <Protobuf Include="..\FirstProjectGrpc\Protos\services.proto" GrpcServices="Client">
+      <Link>Protos\services.proto</Link>
+    </Protobuf>
+  </ItemGroup>
+</Project>

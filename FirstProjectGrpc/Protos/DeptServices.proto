@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+option csharp_namespace = "FirstProjectGrpc.Protos.SharedProtos";
+
+import "google/protobuf/empty.proto";
+import "DeptModels.proto";
+
+service DeptService{
+	rpc Add(DeptDto) returns (google.protobuf.Empty);
+	rpc GetById(DeptId) returns (DeptResponse);
+	rpc GetAll(google.protobuf.Empty) returns (stream DeptResponse);
+	rpc GetEmp(DeptId) returns (Emps);
+}
+

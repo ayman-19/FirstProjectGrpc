@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+option csharp_namespace = "FirstProjectGrpc.Protos";
+
+import "google/protobuf/empty.proto";
+
+import "models.proto";
+
+service TrackingService {
+	rpc SendMassage (TrackingMassage) returns (TrackingResponse);
+	rpc KeepAlive (stream PulseMessage) returns (google.protobuf.Empty);
+	rpc SubscribeNotification (SubscribeRequest) returns (stream Notification);
+}
+
+service ProductService {
+	rpc AddProduct (AddProductDto) returns (GetProductDto);
+}

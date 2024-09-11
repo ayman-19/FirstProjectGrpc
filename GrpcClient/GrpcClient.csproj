@@ -1,0 +1,32 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Grpc.AspNetCore" Version="2.49.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="7.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="7.0.13" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="7.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Protobuf Include="..\FirstProjectGrpc\Protos\DeptModels.proto" GrpcServices="Client">
+      <Link>Protos\DeptModels.proto</Link>
+    </Protobuf>
+    <Protobuf Include="..\FirstProjectGrpc\Protos\DeptServices.proto" GrpcServices="Client">
+      <Link>Protos\DeptServices.proto</Link>
+    </Protobuf>
+    <Protobuf Include="..\FirstProjectGrpc\Protos\models.proto" GrpcServices="Client">
+      <Link>Protos\models.proto</Link>
+    </Protobuf>
+    <Protobuf Include="..\FirstProjectGrpc\Protos\services.proto" GrpcServices="Client">
+      <Link>Protos\services.proto</Link>
+    </Protobuf>
+  </ItemGroup>
+
+</Project>

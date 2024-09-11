@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+option csharp_namespace = "FirstProjectGrpc.Protos.SharedProtos";
+
+message DeptDto {
+	string Name = 1;
+}
+message DeptId { 
+	int32 Id = 1;
+}
+message DeptResponse{
+	int32 Id = 1;
+	string Name = 2;
+	repeated Emps emps = 3;
+}
+message Emps {
+	int32 Id = 1;
+	string Name = 2;
+}
